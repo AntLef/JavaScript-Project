@@ -25,20 +25,20 @@ var Afficheur = function(element) {
 var scortO = 0;
 var scortU = 0;
   
-function comparer(_choixOrdi, _choixUtilisateur) {
+function comparer(_choixOrdi, choixUtilisateur) {
   
-    if(_choixUtilisateur == _choixOrdi) {
+    if(choixUtilisateur == _choixOrdi) {
         afficheur.sendMessage("Il y a égalité.</br>L'ordinateur a choisi " + _choixOrdi);
     }
-    else if( (_choixUtilisateur == "pierre" && _choixOrdi == "ciseaux") || 
-             (_choixUtilisateur == "feuille" && _choixOrdi == "pierre") || 
-             (_choixUtilisateur == "ciseaux" && _choixOrdi == "feuille") ) {
+    else if( (choixUtilisateur == "pierre" && _choixOrdi == "ciseaux") || 
+             (choixUtilisateur == "feuille" && _choixOrdi == "pierre") || 
+             (choixUtilisateur == "ciseaux" && _choixOrdi == "feuille") ) {
         afficheur.sendMessage("Vous avez gagné.</br>L'ordinateur a choisi " + _choixOrdi);
         scortU++;
     }
-    else if( (_choixUtilisateur == "feuille" && _choixOrdi == "ciseaux") || 
-             (_choixUtilisateur == "piere" && _choixOrdi == "feuille") || 
-             (_choixUtilisateur == "ciseaux" && _choixOrdi == "pierre") ) {
+    else if( (choixUtilisateur == "feuille" && _choixOrdi == "ciseaux") || 
+             (choixUtilisateur == "piere" && _choixOrdi == "feuille") || 
+             (choixUtilisateur == "ciseaux" && _choixOrdi == "pierre") ) {
         afficheur.sendMessage("Vous avez perdu.</br>L'ordinateur a choisi " + _choixOrdi);
         scortO++;
     }
@@ -62,18 +62,18 @@ function FchoixOrdi() {
     return choixOrdi;
 }
 
-function FchoixUtilisateur(_choixUtilisateur) {
+function FchoixUtilisateur(choixUtilisateur) {
   
-    if(_choixUtilisateur == "pierre") {
-        _choixUtilisateur = "pierre";
+    if(choixUtilisateur == "pierre") {
+        choixUtilisateur = "pierre";
     }
-    else if(_choixUtilisateur == "feuille") {
-    _choixUtilisateur = "feuille";
+    else if(choixUtilisateur == "feuille") {
+    choixUtilisateur = "feuille";
     }
-    else if(_choixUtilisateur == "ciseaux") {
-        _choixUtilisateur = "ciseaux";
+    else if(choixUtilisateur == "ciseaux") {
+        choixUtilisateur = "ciseaux";
     }
-    return _choixUtilisateur;
+    return choixUtilisateur;
 }
   
 function main() {
@@ -149,7 +149,7 @@ function Timer() {
         document.getElementById("chrono").innerHTML = "Temps restant : " + secondes + "<br />";
         secondes--;
     } else {
-        document.getElementById("chrono").innerHTML += "Ça y est !!! T'as perdu " + "<br />";
+        document.getElementById("chrono").innerHTML += "Ça y est !!!'as perdu " + "<br />";
         stopChrono();
     }
 }
