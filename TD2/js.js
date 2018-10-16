@@ -44,7 +44,7 @@ function comparer(choixOrdi, choixUtilisateur) {
     }
   
 }
-  
+
 function FchoixUtilisateur(choixUtilisateur) {
   
     if(choixUtilisateur == "pierre") {
@@ -109,12 +109,7 @@ main();
  * Chrono
  */
 
-var temps;
- 
-/**
- * Affiche le chrono
- */
- 
+var temps; 
 var secondes = 3;
  
 function Timer() {
@@ -123,7 +118,7 @@ function Timer() {
         document.getElementById("chrono").innerHTML = "Temps restant : " + secondes + "<br />";
         secondes--;
     } else {
-        document.getElementById("chrono").innerHTML += "Ça y est !!!'as perdu " + "<br />";
+        document.getElementById("chrono").innerHTML += "Trop tard !!! T'as perdu " + "<br />";
         stopChrono();
     }
 }
