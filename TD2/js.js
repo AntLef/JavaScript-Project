@@ -10,7 +10,6 @@ function psedo() {
 
 
 
-
 // création de la classe affichage des différents messages
 var Afficheur = function(element) {
     var display = element; // cette variable est chargée de prendre l'élement passer au niveau du constructeur
@@ -25,26 +24,26 @@ var scortO = 0;
 var scortU = 0;
 var cpt = 0;
   
-function comparer(_choixOrdi, choixUtilisateur) {
+function comparer(choixOrdi, choixUtilisateur) {
   
-    if(choixUtilisateur == _choixOrdi) {
-        afficheur.sendMessage("Il y a égalité.</br>L'ordinateur a choisi " + _choixOrdi);
+    if(choixUtilisateur == choixOrdi) {
+        afficheur.sendMessage("Il y a égalité.</br>L'ordinateur a choisi " + choixOrdi);
     }
-    else if( (choixUtilisateur == "pierre" && _choixOrdi == "ciseaux") || 
-             (choixUtilisateur == "feuille" && _choixOrdi == "pierre") || 
-             (choixUtilisateur == "ciseaux" && _choixOrdi == "feuille") ) {
-        afficheur.sendMessage("Vous avez gagné.</br>L'ordinateur a choisi " + _choixOrdi);
+    else if( (choixUtilisateur == "pierre" && choixOrdi == "ciseaux") || 
+             (choixUtilisateur == "feuille" && choixOrdi == "pierre") || 
+             (choixUtilisateur == "ciseaux" && choixOrdi == "feuille") ) {
+        afficheur.sendMessage("Vous avez gagné.</br>L'ordinateur a choisi " + choixOrdi);
         scortU++;
     }
-    else if( (choixUtilisateur == "feuille" && _choixOrdi == "ciseaux") || 
-             (choixUtilisateur == "piere" && _choixOrdi == "feuille") || 
-             (choixUtilisateur == "ciseaux" && _choixOrdi == "pierre") ) {
-        afficheur.sendMessage("Vous avez perdu.</br>L'ordinateur a choisi " + _choixOrdi);
+    else if( (choixUtilisateur == "feuille" && choixOrdi == "ciseaux") || 
+             (choixUtilisateur == "piere" && choixOrdi == "feuille") || 
+             (choixUtilisateur == "ciseaux" && choixOrdi == "pierre") ) {
+        afficheur.sendMessage("Vous avez perdu.</br>L'ordinateur a choisi " + choixOrdi);
         scortO++;
     }
   
 }
-  
+
 var afficheur = new Afficheur(document.querySelector("#statut-jeu")); // création de l'objet qui va modifier le texte du résultat du jeu
   
 function FchoixOrdi() {
@@ -136,11 +135,6 @@ main();
  */
 
 var temps;
- 
-/**
- * Affiche le chrono
- */
- 
 var secondes = 3;
  
 function Timer() {
@@ -149,7 +143,7 @@ function Timer() {
         document.getElementById("chrono").innerHTML = "Temps restant : " + secondes + "<br />";
         secondes--;
     } else {
-        document.getElementById("chrono").innerHTML += "Ça y est !!!'as perdu " + "<br />";
+        document.getElementById("chrono").innerHTML += "Ça y est !!! T'as perdu " + "<br />";
         stopChrono();
     }
 }
