@@ -42,7 +42,7 @@ function comparer(choixOrdi, choixUtilisateur) {
         afficheur.sendMessage("Vous avez perdu.</br>L'ordinateur a choisi " + choixOrdi);
         scortO++;
     }
-    else if
+    else
   
 }
 
