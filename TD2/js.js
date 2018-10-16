@@ -149,7 +149,7 @@ function Timer() {
         document.getElementById("chrono").innerHTML = "Temps restant : " + secondes + "<br />";
         secondes--;
     } else {
-        document.getElementById("chrono").innerHTML += "Ça y est c'est fini gros, t'as perdu " + "<br />";
+        document.getElementById("chrono").innerHTML += "Ça y est !!! T'as perdu " + "<br />";
         stopChrono();
     }
 }

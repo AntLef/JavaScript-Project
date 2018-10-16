@@ -66,13 +66,7 @@ function PoM_partie(min, max)
 		 while(continuer);
 
 		 alert("Tu as joue " + cpt + " manche(s).\nTon meilleur score est de " + best_score + " coups.");
-		 alert(lire1);
+		 alert(tableau);
 
 		 return best_score;
 }
-
-
-
-
-
-
