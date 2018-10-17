@@ -8,9 +8,6 @@
 
 }
 
-
-
-
 // création de la classe affichage des différents messages
 var Afficheur = function(element) {
     var display = element; // cette variable est chargée de prendre l'élement passer au niveau du constructeur
@@ -29,63 +26,131 @@ function comparer(_choixOrdi, choixUtilisateur) {
   
     if(choixUtilisateur == _choixOrdi) {
         afficheur.sendMessage("Il y a égalité.</br>L'ordinateur a choisi " + _choixOrdi);
-    //console.log(scortU);
-    //console.log(scortO);
+    console.log(scortU);
+    console.log(scortO);
     }
     else if( (choixUtilisateur == "pierre" && _choixOrdi == "ciseaux") || 
              (choixUtilisateur == "feuille" && _choixOrdi == "pierre") || 
              (choixUtilisateur == "ciseaux" && _choixOrdi == "feuille") ) {
         afficheur.sendMessage("Vous avez gagné.</br>L'ordinateur a choisi " + _choixOrdi);
         scortU++;
-    //console.log(scortU);
-    //console.log(scortO);
+    console.log(scortU);
+    console.log(scortO);
     }
     else if( (choixUtilisateur == "feuille" && _choixOrdi == "ciseaux") || 
-             (choixUtilisateur == "piere" && _choixOrdi == "feuille") || 
+             (choixUtilisateur == "pierre" && _choixOrdi == "feuille") || 
              (choixUtilisateur == "ciseaux" && _choixOrdi == "pierre") ) {
         afficheur.sendMessage("Vous avez perdu.</br>L'ordinateur a choisi " + _choixOrdi);
         scortO++;
-    //console.log(scortU);
-    //console.log(scortO);
+    console.log(scortU);
+    console.log(scortO);
     }
   
 }
   
 var afficheur = new Afficheur(document.querySelector("#statut-jeu")); // création de l'objet qui va modifier le texte du résultat du jeu
-  
-function FchoixOrdi() {
-    var choixOrdi = Math.floor(Math.random() * 51);
-    var cpt = 0;
-//mettre une condition avec une double instructions afin de choisir soit ciseaux ou feuilles et reset le cpt
-        if (choixOrdi < 20){
-            choixOrdi = "pierre";
-            console.log("Pierre");
-            cpt++;
-        }
-        else if(choixOrdi > 20 && choixOrdi < 40) {
-            choixOrdi = "feuille";
-            console.log("Feuille");
-        }
-        else if(choixOrdi > 40) {
-            choixOrdi = "ciseaux";
-            console.log("Ciseaux");
-        }
-        return choixOrdi;
-    }
+var cptPierre = 0;
+var cptFeuille = 0;
+var cptCiseaux = 0;
 
-function FchoixUtilisateur(choixUtilisateur) {
-  
+function FchoixOrdi() {
+    var choixOrdi = Math.floor(Math.random() * 100);
+
+
+    /*if (choixOrdi < 20) {
+    
+    }
+    else if(choixOrdi >= 20 && choixOrdi < 40) {}
+    else if(choixOrdi >= 40) {}*/
+        chrono();
+
+        console.log('var', 'cptPierre : ' +cptPierre + '\n' +
+            'cptFeuille : ' +cptFeuille + '\n' +
+            'cptCiseaux : ' +cptCiseaux + '\n' +
+            'choixOrdi : ' +choixOrdi + '\n'
+            );
+
+    if (cptPierre >= 2){
+        if (choixOrdi < 50){
+            choixOrdi = "feuille";
+            console.log('ctpPierre > 2', "Feuille");
+            cptPierre = 0;
+        }
+        else if(choixOrdi > 50){
+            choixOrdi = "ciseaux";
+            console.log('ctpPierre > 2', "Ciseaux");
+            cptPierre = 0;
+        }
+        else {console.log("else 1", choixOrdi);}
+    }
+    else if (cptPierre < 2 && choixOrdi <33){
+        choixOrdi = "pierre";
+        console.log('ctpPierre > 2', "Pierre");
+        cptPierre++;
+        cptCiseaux = 0;
+        cptFeuille = 0;
+    }
+        else {console.log("else 2", choixOrdi);}
+
+    if (cptFeuille >= 2){
+        if(choixOrdi < 50) {
+            choixOrdi = "pierre";
+            console.log('cptFeuille > 2', "Pierre");
+            cptFeuille = 0;
+        }
+        else if(choixOrdi > 50) {
+            choixOrdi = "ciseaux";
+            console.log('cptFeuille > 2', "Ciseaux");
+            cptFeuille = 0;
+        }
+        else {console.log("else 3", choixOrdi);}
+    }
+    else if (cptFeuille < 2 && (choixOrdi > 33 && choixOrdi < 66)){
+        choixOrdi = "feuille";
+        console.log('cptFeuille > 2', "Feuille");
+        cptFeuille++;
+        cptCiseaux = 0;
+        cptPierre = 0;
+    }
+        else {console.log("else 4", choixOrdi);}
+
+    if (cptCiseaux >= 2){
+        if(choixOrdi < 50) {
+            choixOrdi = "pierre";
+            console.log('cptCiseaux > 2', "Pierre");
+            cptCiseaux = 0;
+        }
+        else if(choixOrdi > 50) {
+            choixOrdi = "feuille";
+            console.log('cptCiseaux > 2', "Feuille");
+            cptCiseaux = 0;
+        }
+        else {console.log("else 5", choixOrdi);}
+    }
+    else if (cptFeuille < 2 && choixOrdi > 66){
+        choixOrdi = "ciseaux";
+        console.log('cptCiseaux > 2', "Ciseaux");
+        cptCiseaux++;
+        cptPierre = 0;
+        cptFeuille =0;
+    }
+        else {console.log("else 6", choixOrdi);}
+        return choixOrdi;
+        
+    }
+function FchoixUtilisateur(choixUtilisateur){
+
     if(choixUtilisateur == "pierre") {
         choixUtilisateur = "pierre";
-        console.log("Pierre")
+        console.log("J1 Pierre")
     }
     else if(choixUtilisateur == "feuille") {
         choixUtilisateur = "feuille";
-        console.log("Feuille");
+        console.log("J1 Feuille");
     }
     else if(choixUtilisateur == "ciseaux") {
         choixUtilisateur = "ciseaux";
-        console.log("Ciseaux");
+        console.log("J1 Ciseaux");
     }
     return choixUtilisateur;
 }
@@ -139,32 +204,12 @@ function main() {
 }
   
 main();
-/**
- * Chrono
- */
 
-var temps;
- 
-/**
- * Affiche le chrono
- */
- 
-var secondes = 3;
- 
-function Timer() {
-    /* Chronomètre démarre à 3 secondes */
-    if (secondes > 0) {
-        document.getElementById("chrono").innerHTML = "Temps restant : " + secondes + "<br />";
-        secondes--;
-    } else {
-        document.getElementById("chrono").innerHTML += "Ça y est !!!'as perdu " + "<br />";
-        stopChrono();
-    }
+function chrono(){
+var timer = setTimeout(function() {
+    console.log("Ordi ggr");
+    console.log("J1 T'es nul, T'a perdu, CHAIIII");
+    clearTimeout(timer);
+}, 3000);
 }
- 
-/**
- * Arrête le chrono
- */
-function stopChrono() {
-    clearInterval(temps);
-}
+chrono();
