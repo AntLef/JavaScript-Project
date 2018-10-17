@@ -1,11 +1,12 @@
-    function psedo() {
+var pseudo;
 
-    var start = 'Bonjour ', name, end = ' !', result;
 
-    name = prompt('Quel est votre prénom ?');
-    result = start + name + end;
-    alert(result);
 
+function testes(){
+    pseudo = document.getElementById("pseudo").value;  
+
+    document.getElementById("pseudos").innerHTML=pseudo;
+    console.log('pseudo ' + pseudo);
 }
 
 // création de la classe affichage des différents messages
@@ -22,7 +23,7 @@ var scortO = 0;
 var scortU = 0;
 
 function start(){ 
-    alert("appuie sur ok pour commencer a jouer");
+    //alert("appuie sur ok pour commencer a jouer");
     chrono();
 }
 
