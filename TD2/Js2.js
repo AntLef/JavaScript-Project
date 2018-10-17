@@ -1,10 +1,12 @@
-  function getpsedo() {
-        {
-            var psedo = document.getElementById("psedo");
-            alert(psedo);
-        } 
+var pseudo;
 
 
+
+function testes(){
+    pseudo = document.getElementById("pseudo").value;  
+
+    document.getElementById("pseudos").innerHTML=pseudo;
+    console.log('pseudo ' + pseudo);
 }
 
 
@@ -18,11 +20,11 @@ var Afficheur = function(element) {
     }
     return {sendMessage : setText};
 }
- 
+
 var scortO = 0;
 var scortU = 0;
 
-  
+
 function comparer(_choixOrdi, choixUtilisateur) {
   
     if(choixUtilisateur == _choixOrdi) {
