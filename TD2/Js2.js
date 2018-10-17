@@ -56,13 +56,14 @@ var cptCiseaux = 0;
 function FchoixOrdi() {
     var choixOrdi = Math.floor(Math.random() * 100);
 
+    chrono();
 
     /*if (choixOrdi < 20) {
     
     }
     else if(choixOrdi >= 20 && choixOrdi < 40) {}
     else if(choixOrdi >= 40) {}*/
-        chrono();
+    
 
         console.log('var', 'cptPierre : ' +cptPierre + '\n' +
             'cptFeuille : ' +cptFeuille + '\n' +
@@ -206,10 +207,14 @@ function main() {
 main();
 
 function chrono(){
-var timer = setTimeout(function() {
-    console.log("Ordi ggr");
-    console.log("J1 T'es nul, T'a perdu, CHAIIII");
-    clearTimeout(timer);
-}, 3000);
+    var timer = setTimeout(function() {
+        
+        clearTimeout(timer);
+        console.log("Ordi ggr");
+        console.log("J1 T'es nul, T'a perdu, CHAIIII");
+        alert("Ordi ggr");
+        alert("J1 T'es nul, T'a perdu, CHAIIII");
+    }, 
+3000);
 }
 chrono();

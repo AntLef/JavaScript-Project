@@ -8,6 +8,14 @@ function psedo() {
 
 }
 
+// ...
+
+function displayJour(j) {
+    console.log("Jour "+j+" = "+tab[j]);	
+}
+
+// ...
+
 
 
 // création de la classe affichage des différents messages
@@ -29,9 +37,7 @@ function comparer(choixOrdi, choixUtilisateur) {
     if(choixUtilisateur == choixOrdi) {
         afficheur.sendMessage("Il y a égalité.</br>L'ordinateur a choisi " + choixOrdi);
     }
-    else if( (choixUtilisateur == "pierre" && choixOrdi == "ciseaux") || 
-             (choixUtilisateur == "feuille" && choixOrdi == "pierre") || 
-             (choixUtilisateur == "ciseaux" && choixOrdi == "feuille") ) {
+    else if( (choixUtilisateur == "pierre" && choixOrdi == "ciseaux") || (choixUtilisateur == "feuille" && choixOrdi == "pierre") ||  (choixUtilisateur == "ciseaux" && choixOrdi == "feuille") ) {
         afficheur.sendMessage("Vous avez gagné.</br>L'ordinateur a choisi " + choixOrdi);
         scortU++;
     }
@@ -45,7 +51,7 @@ function comparer(choixOrdi, choixUtilisateur) {
 }
 
 var afficheur = new Afficheur(document.querySelector("#statut-jeu")); // création de l'objet qui va modifier le texte du résultat du jeu
-  
+s
 function FchoixOrdi() {
     var choixOrdi = Math.floor(Math.random() * 51);
   
@@ -65,7 +71,8 @@ function FchoixOrdi() {
 }
 
 function FchoixUtilisateur(choixUtilisateur) {
-  
+
+    // if(Jeu <= chrono){                si choix utilisateur <= chrono / si choixutilisateur >= chrono , return perdu
     if(choixUtilisateur == "pierre") {
         choixUtilisateur = "pierre";
         console.log("Pierre")
@@ -80,14 +87,26 @@ function FchoixUtilisateur(choixUtilisateur) {
     }
     return choixUtilisateur;
 }
-  
+
+// test --- test --- test
+// test --- test --- test
+
+//function Fchrono(){
+//intervalId = setInterval(FchoixUtilisateur, 3000);
+//}  
+
+// if(FchoixUtilisateur >= 3 secondes)
+
+// test --- test --- test
+// test --- test --- test
+
 function main() {
   
     // déclaration de notre tableau pions qui va contenir l'ensemble des boutons
     var tabchoixUtilisateur = document.querySelectorAll("#block-jeu button"); 
     // la méthode va selectionner tous les boutons présent dans la div block-jeu et les retourner dans notre tableau pions
  
-    var finJeu = 30;
+    var finJeu = 0;
     
         for(var i = 0, taille = tabchoixUtilisateur.length; i < taille; i++) {
   
@@ -130,27 +149,3 @@ function main() {
 }
   
 main();
-/**
- * Chrono
- */
-
-var temps;
-var secondes = 3;
- 
-function Timer() {
-    /* Chronomètre démarre à 3 secondes */
-    if (secondes > 0) {
-        document.getElementById("chrono").innerHTML = "Temps restant : " + secondes + "<br />";
-        secondes--;
-    } else {
-        document.getElementById("chrono").innerHTML += "Ça y est !!! T'as perdu " + "<br />";
-        stopChrono();
-    }
-}
- 
-/**
- * Arrête le chrono
- */
-function stopChrono() {
-    clearInterval(temps);
-}
