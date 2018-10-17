@@ -1,12 +1,13 @@
-    function psedo() {
+  function getpsedo() {
+        {
+            var psedo = document.getElementById("psedo");
+            alert(psedo);
+        } 
 
-    var start = 'Bonjour ', name, end = ' !', result;
-
-    name = prompt('Quel est votre prénom ?');
-    result = start + name + end;
-    alert(result);
 
 }
+
+
 
 // création de la classe affichage des différents messages
 var Afficheur = function(element) {
@@ -215,6 +216,6 @@ function chrono(){
         alert("Ordi ggr");
         alert("J1 T'es nul, T'a perdu, CHAIIII");
     }, 
-3000);
+    3000);
 }
 chrono();
