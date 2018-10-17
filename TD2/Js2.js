@@ -1,3 +1,5 @@
+// JS3///
+
 var pseudo;
 
 
@@ -8,6 +10,8 @@ function testes(){
     document.getElementById("pseudos").innerHTML=pseudo;
     console.log('pseudo ' + pseudo);
 }
+
+
 
 // création de la classe affichage des différents messages
 var Afficheur = function(element) {
@@ -23,15 +27,11 @@ var scortO = 0;
 var scortU = 0;
 
 function start(){ 
-    //alert("appuie sur ok pour commencer a jouer");
+    alert("appuie sur ok pour commencer a jouer");
     chrono();
 }
 
-function finish(){
-    clearimmediate(timer);
-}
-
-  
+ 
 function comparer(_choixOrdi, choixUtilisateur) {
   
     if(choixUtilisateur == _choixOrdi) {
@@ -153,17 +153,14 @@ function FchoixUtilisateur(choixUtilisateur){
 
     if(choixUtilisateur == "pierre") {
         choixUtilisateur = "pierre";
-        finish();
         console.log("J1 Pierre")
     }
     else if(choixUtilisateur == "feuille") {
         choixUtilisateur = "feuille";
-        finish();
         console.log("J1 Feuille");
     }
     else if(choixUtilisateur == "ciseaux") {
         choixUtilisateur = "ciseaux";
-        finish();
         console.log("J1 Ciseaux");
     }
     return choixUtilisateur;
@@ -188,6 +185,7 @@ function main() {
                 var choixU = FchoixUtilisateur(choixUtilisateur);
                 var choixO = FchoixOrdi();
                 comparer(choixO, choixU);
+                start();
  
                 finJeu++;
                 console.log(finJeu);
@@ -216,20 +214,22 @@ function main() {
             });
         }
 }
-
+var timer;
 function chrono(){
-var timer = setTimeout(function() {
+    if (timer) {
+        clearTimeout(timer);
+    }
+timer = setTimeout(function() {
     scortO++;
     console.log("Tu n'as pas été assez rapide, tu as perdu.");
     console.log('Score de J1 est de',scortU);
     console.log('Score de IA est de',scortO);
-    start();
     clearTimeout(timer);
+    start();
 }, 3000);
 }
 
 main();
 start();
-
 
 
