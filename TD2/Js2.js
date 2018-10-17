@@ -1,14 +1,11 @@
 var pseudo;
 
-
-
 function testes(){
     pseudo = document.getElementById("pseudo").value;  
 
     document.getElementById("pseudos").innerHTML=pseudo;
     console.log('pseudo ' + pseudo);
 }
-
 
 
 // création de la classe affichage des différents messages
