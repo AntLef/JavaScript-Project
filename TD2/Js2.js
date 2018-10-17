@@ -55,26 +55,72 @@ var afficheur = new Afficheur(document.querySelector("#statut-jeu")); // créati
   
 function FchoixOrdi() {
     var choixOrdi = Math.floor(Math.random() * 51);
-    var cpt = 0;
-//mettre une condition avec une double instructions afin de choisir soit ciseaux ou feuilles et reset le cpt
-        if (choixOrdi < 20){
-            choixOrdi = "pierre";
-            console.log("Pierre");
-            cpt++;
-        }
-        else if(choixOrdi > 20 && choixOrdi < 40) {
+    var cptPierre = 0;
+    var cptFeuille = 0;
+    var cptCiseaux = 0;
+
+    if (cptPierre > 2);{
+        if (choixOrdi < 40){
             choixOrdi = "feuille";
             console.log("Feuille");
+            console.log("Le compteur de Pierre");
+            console.log(cptPierre);
+            cptPierre = 0;
+            console.log("nv compteur");
+            console.log(cptPierre);
         }
-        else if(choixOrdi > 40) {
+        else if(choixOrdi > 40){
+            choixOrdi = "ciseaux";
+            console.log("Ciseaux")
+            cptPierre = 0;
+        }
+    else if (cptPierre < 2 && choixOrdi <20){
+        choixOrdi = "pierre";
+        console.log("Pierre");
+        cptPierre++
+    }
+    }
+
+    if (cptFeuille > 2);{
+        if(choixOrdi < 20) {
+            choixOrdi = "pierre";
+            console.log("Pierre");
+            cptFeuille = 0;
+        }
+        else if(choixOrdi > 20) {
             choixOrdi = "ciseaux";
             console.log("Ciseaux");
+            cptFeuille = 0;
         }
+    else if (cptFeuille < 2 && (choixOrdi < 20 && choixOrdi > 40)){
+        choixOrdi = "feuille";
+        console.log("Feuille");
+        cptFeuille++;
+    }
+    }
+
+    if (cptCiseaux > 2);{
+        if(choixOrdi < 20) {
+            choixOrdi = "pierre";
+            console.log("Pierre");
+            cptCiseaux = 0;
+        }
+        else if(choixOrdi > 20) {
+            choixOrdi = "feuille";
+            console.log("Feuille");
+            cptCiseaux = 0;
+        }
+    else if (cptFeuille < 2 && choixOrdi > 40){
+        choixOrdi = "ciseaux";
+        console.log("Ciseaux");
+        cptCiseaux++;
+    }
+    }
         return choixOrdi;
     }
 
-function FchoixUtilisateur(choixUtilisateur) {
-  
+function FchoixUtilisateur(choixUtilisateur){
+
     if(choixUtilisateur == "pierre") {
         choixUtilisateur = "pierre";
         console.log("Pierre")
