@@ -1,12 +1,12 @@
-var pseudo;
+    function psedo() {
 
-function testes(){
-    pseudo = document.getElementById("pseudo").value;  
+    var start = 'Bonjour ', name, end = ' !', result;
 
-    document.getElementById("pseudos").innerHTML=pseudo;
-    console.log('pseudo ' + pseudo);
+    name = prompt('Quel est votre prénom ?');
+    result = start + name + end;
+    alert(result);
+
 }
-
 
 // création de la classe affichage des différents messages
 var Afficheur = function(element) {
@@ -17,35 +17,46 @@ var Afficheur = function(element) {
     }
     return {sendMessage : setText};
 }
-
+ 
 var scortO = 0;
 var scortU = 0;
 
+function start(){ 
+    alert("appuie sur ok pour commencer a jouer");
+    chrono();
+}
 
+function finish(){
+    clearimmediate(timer);
+}
+
+  
 function comparer(_choixOrdi, choixUtilisateur) {
   
     if(choixUtilisateur == _choixOrdi) {
         afficheur.sendMessage("Il y a égalité.</br>L'ordinateur a choisi " + _choixOrdi);
-    console.log(scortU);
-    console.log(scortO);
+        alert("Il y a égalité");
+    console.log('Score de J1 est de',scortU);
+    console.log('Score de IA est de',scortO);
     }
     else if( (choixUtilisateur == "pierre" && _choixOrdi == "ciseaux") || 
              (choixUtilisateur == "feuille" && _choixOrdi == "pierre") || 
              (choixUtilisateur == "ciseaux" && _choixOrdi == "feuille") ) {
         afficheur.sendMessage("Vous avez gagné.</br>L'ordinateur a choisi " + _choixOrdi);
         scortU++;
-    console.log(scortU);
-    console.log(scortO);
+        alert("Tu as gagné");
+    console.log('Score de J1 est de',scortU);
+    console.log('Score de IA est de',scortO);
     }
     else if( (choixUtilisateur == "feuille" && _choixOrdi == "ciseaux") || 
              (choixUtilisateur == "pierre" && _choixOrdi == "feuille") || 
              (choixUtilisateur == "ciseaux" && _choixOrdi == "pierre") ) {
         afficheur.sendMessage("Vous avez perdu.</br>L'ordinateur a choisi " + _choixOrdi);
         scortO++;
-    console.log(scortU);
-    console.log(scortO);
-    }
-  
+        alert("Tu as perdu");
+    console.log('Score de J1 est de',scortU);
+    console.log('Score de IA est de',scortO);
+    }   
 }
   
 var afficheur = new Afficheur(document.querySelector("#statut-jeu")); // création de l'objet qui va modifier le texte du résultat du jeu
@@ -56,16 +67,14 @@ var cptCiseaux = 0;
 function FchoixOrdi() {
     var choixOrdi = Math.floor(Math.random() * 100);
 
-    chrono();
 
     /*if (choixOrdi < 20) {
     
     }
     else if(choixOrdi >= 20 && choixOrdi < 40) {}
     else if(choixOrdi >= 40) {}*/
-    
 
-        console.log('var', 'cptPierre : ' +cptPierre + '\n' +
+        console.log('cptPierre : ' +cptPierre + '\n' +
             'cptFeuille : ' +cptFeuille + '\n' +
             'cptCiseaux : ' +cptCiseaux + '\n' +
             'choixOrdi : ' +choixOrdi + '\n'
@@ -74,83 +83,86 @@ function FchoixOrdi() {
     if (cptPierre >= 2){
         if (choixOrdi < 50){
             choixOrdi = "feuille";
-            console.log('ctpPierre > 2', "Feuille");
+            //console.log('ctpPierre > 2', "Feuille");
             cptPierre = 0;
         }
         else if(choixOrdi > 50){
             choixOrdi = "ciseaux";
-            console.log('ctpPierre > 2', "Ciseaux");
+            //console.log('ctpPierre > 2', "Ciseaux");
             cptPierre = 0;
         }
-        else {console.log("else 1", choixOrdi);}
+        //else {console.log("else 1", choixOrdi);}
     }
     else if (cptPierre < 2 && choixOrdi <33){
         choixOrdi = "pierre";
-        console.log('ctpPierre > 2', "Pierre");
+        //console.log('ctpPierre > 2', "Pierre");
         cptPierre++;
         cptCiseaux = 0;
         cptFeuille = 0;
     }
-        else {console.log("else 2", choixOrdi);}
+        //else {console.log("else 2", choixOrdi);}
 
     if (cptFeuille >= 2){
         if(choixOrdi < 50) {
             choixOrdi = "pierre";
-            console.log('cptFeuille > 2', "Pierre");
+            //console.log('cptFeuille > 2', "Pierre");
             cptFeuille = 0;
         }
         else if(choixOrdi > 50) {
             choixOrdi = "ciseaux";
-            console.log('cptFeuille > 2', "Ciseaux");
+            //console.log('cptFeuille > 2', "Ciseaux");
             cptFeuille = 0;
         }
-        else {console.log("else 3", choixOrdi);}
+        //else {console.log("else 3", choixOrdi);}
     }
     else if (cptFeuille < 2 && (choixOrdi > 33 && choixOrdi < 66)){
         choixOrdi = "feuille";
-        console.log('cptFeuille > 2', "Feuille");
+        //console.log('cptFeuille > 2', "Feuille");
         cptFeuille++;
         cptCiseaux = 0;
         cptPierre = 0;
     }
-        else {console.log("else 4", choixOrdi);}
+        //else {console.log("else 4", choixOrdi);}
 
     if (cptCiseaux >= 2){
         if(choixOrdi < 50) {
             choixOrdi = "pierre";
-            console.log('cptCiseaux > 2', "Pierre");
+            //console.log('cptCiseaux > 2', "Pierre");
             cptCiseaux = 0;
         }
         else if(choixOrdi > 50) {
             choixOrdi = "feuille";
-            console.log('cptCiseaux > 2', "Feuille");
+            //console.log('cptCiseaux > 2', "Feuille");
             cptCiseaux = 0;
         }
         else {console.log("else 5", choixOrdi);}
     }
     else if (cptFeuille < 2 && choixOrdi > 66){
         choixOrdi = "ciseaux";
-        console.log('cptCiseaux > 2', "Ciseaux");
+        //console.log('cptCiseaux > 2', "Ciseaux");
         cptCiseaux++;
         cptPierre = 0;
         cptFeuille =0;
     }
-        else {console.log("else 6", choixOrdi);}
-        return choixOrdi;
-        
+        //else {console.log("else 6", choixOrdi);}
+        return choixOrdi;        
     }
+
 function FchoixUtilisateur(choixUtilisateur){
 
     if(choixUtilisateur == "pierre") {
         choixUtilisateur = "pierre";
+        finish();
         console.log("J1 Pierre")
     }
     else if(choixUtilisateur == "feuille") {
         choixUtilisateur = "feuille";
+        finish();
         console.log("J1 Feuille");
     }
     else if(choixUtilisateur == "ciseaux") {
         choixUtilisateur = "ciseaux";
+        finish();
         console.log("J1 Ciseaux");
     }
     return choixUtilisateur;
@@ -203,18 +215,20 @@ function main() {
             });
         }
 }
-  
-main();
 
 function chrono(){
-    var timer = setTimeout(function() {
-        
-        clearTimeout(timer);
-        console.log("Ordi ggr");
-        console.log("J1 T'es nul, T'a perdu, CHAIIII");
-        alert("Ordi ggr");
-        alert("J1 T'es nul, T'a perdu, CHAIIII");
-    }, 
-    3000);
+var timer = setTimeout(function() {
+    scortO++;
+    console.log("Tu n'as pas été assez rapide, tu as perdu.");
+    console.log('Score de J1 est de',scortU);
+    console.log('Score de IA est de',scortO);
+    start();
+    clearTimeout(timer);
+}, 3000);
 }
-chrono();
+
+main();
+start();
+
+
+
