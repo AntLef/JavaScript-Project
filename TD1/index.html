@@ -8,10 +8,31 @@
 <body>
         <h1>Le nombre à trouver</h1>
 <p>
-        <a href="#" onclick="javascript:PoM_partie(1,100)">Niveau Normal</a><br />
+        <a href="#" onclick="javascript:PoM_partie(1,3)">Niveau Normal</a><br />
 </p>
 
+<br><br>
+<input type="button" value="Reload Page" onClick="document.location.reload(true)">
+<br><br>
+
+<form method="post" action="">
+        <input type="text" name="cpt" id="cpt" />
+         <input type="text" name="best_score" id="best_score" />
+        <input type="text" name="score" id="score" />
+            
+        <input type="button"value="Enregistrer"/>
+</form>
+
+<table id="tabl" border="1" onclick="ajouterLigne();" >
+        <thead>
+                <th>Nb à trouver</th>
+                <th>+ Score</th>
+                <th>Score partie en cours</th>
+        </thead>
+</table>
+
 <script src="js.js"></script>
+<script src="tab.js"></script>
 
 </body>
 </html>

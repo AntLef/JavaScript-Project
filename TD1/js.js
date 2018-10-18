@@ -1,3 +1,8 @@
+var cpt = 0; // nb de manches jouees
+var best_score = 0; // meilleur score
+var score; // score de la partie en cours
+var continuer;
+
 function nb_aleatoire(min, max)
 {
 		 var nb = min + (max-min+1)*Math.random();
@@ -31,42 +36,58 @@ function PoM_manche(min, max)
 		 return cpt;
 }
 
-
+	 
 function PoM_partie(min, max)
 {
-		 var cpt = 0; // nb de manches jouees
-		 var best_score = 0; // meilleur score
-		 var score; // score de la partie en cours
-		 var continuer;
-
 		 do
 		 {
 					score = PoM_manche(min, max); // joue la manche
 					if(score)
 					{
 							 cpt++;
-							 if(score < best_score || best_score == 0)
+							 if(console.log(tableau) < best_score || best_score == 0){
 										best_score = score;
 										var tableau = [cpt, best_score, score];
-										 console.log(tableau);
+										console.log(tableau);
+											
+										}
+							
 
-											function lire1(tableau)
-												{
-														var chaine = "Le tableau contient :"
-														for(var i=0; i<tableau.length; i++)
-																chaine += "\n" + i + " -> " + tableau[i];
-														return chaine;
-												}
-												
+
 							 continuer = confirm("Bravo, tu as gagne en " + score + " coups.\nVeux-tu rejouer ?");
+							 ajouterLigne(tableau);
+
 					}
 					else
 							 continuer = false;
 		 }
 		 while(continuer);
-
 		 alert("Tu as joue " + cpt + " manche(s).\nTon meilleur score est de " + best_score + " coups.");
-		 alert(tableau);
+
+
 
 		 return best_score;
 }
+
+function ajouterLigne()
+	{
+		var tabl = document.getElementById("tabl");
+
+			var ligne = tabl.insertRow(-1); //on a ajouté une ligne
+
+				var colonne1 = ligne.insertCell(0); //on a une ajouté une cellule
+				colonne1.innerHTML += document.getElementById("cpt").innerHTML=cpt; //on y met le contenu de titre
+				
+				var colonne2 = ligne.insertCell(1); //on ajoute la seconde cellule
+				colonne2.innerHTML += document.getElementById("best_score").innerHTML=best_score;
+				
+				var colonne3 = ligne.insertCell(2); //on ajoute la seconde cellule
+				colonne3.innerHTML += document.getElementById("score").innerHTML=score;
+				
+	}
+
+
+	
+
+
+
