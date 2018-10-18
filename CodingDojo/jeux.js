@@ -1,3 +1,4 @@
+
 var rbois = document.getElementById('bois');
 var rargile = document.getElementById('argile');
 var rfer = document.getElementById('fer');
@@ -18,6 +19,7 @@ var BOIS = 0;
 var ARGILE = 0;
 var FER = 0;
 var CÉREALE = 0;
+
 var timerBois = 0;
 var timerArgile = 0;
 var timerFer = 0;
@@ -28,9 +30,11 @@ var BATIMENT_LEVEL = 1;
 
 var DEPOT_PRINCIPAL = 0;
 var DEPOT_LEVEL = 0;
+var DEPOT_VALEUR = 800;
 
 var SILO_PRINCIPAL = 0;
 var SILO_LEVEL = 0;
+var SILO_VALEUR = 800;
 
 var SILO = 0;
 
@@ -38,11 +42,13 @@ var multiply = 1;
 var multiplyDepot = 2;
 var multiplySilo = 2;
 
+var Population = 2;
+
 
 
     
 function bois() {
-    if (timerBois && BOIS >= 800) {
+    if (timerBois && (BOIS >= DEPOT_VALEUR)) {
         clearTimeout(timerBois);
         timerBois = setTimeout(function(){
         rbois.innerHTML = BOIS;
@@ -58,7 +64,7 @@ timerBois = setTimeout(function(){
 
 
 function argile() {
-    if (timerArgile && ARGILE >= 800 && DEPOT == 0) {
+    if (timerArgile && (ARGILE >= DEPOT_VALEUR)) {
         clearTimeout(timerArgile);
         timerArgile = setTimeout(function(){
         rargile.innerHTML = ARGILE;
@@ -73,7 +79,7 @@ timerArgile = setTimeout(function(){
 }
 
 function fer() {
-    if (timerFer && FER >= 800 && DEPOT == 0) {
+    if (timerFer && (FER >= DEPOT_VALEUR)) {
         clearTimeout(timerFer);
         timerFer = setTimeout(function(){
         rfer.innerHTML = FER;
@@ -88,13 +94,21 @@ timerFer = setTimeout(function(){
 }
 
 function céreale() {
+    if (timerCéreale && (CÉREALE >= SILO_VALEUR)) {
+        clearTimeout(timerCéreale);
+        timerCéreale = setTimeout(function(){
+        rcéreale.innerHTML = CÉREALE;
+    céreale();
+},0);
+    }
 timerCéreale = setTimeout(function(){
     CÉREALE++;
-    //console.log('Mon céreale est de',CÉREALE);
         rcéreale.innerHTML = CÉREALE;
     céreale();
 },10);
 }
+
+
 
 function BatimentPrincipal(){
     
@@ -110,6 +124,9 @@ function BatimentPrincipal(){
         //console.log(BATIMENT_PRINCIPAL);
         rbp.innerHTML = BATIMENT_PRINCIPAL;
         multiply++
+        Population = Population+7;
+        console.log('Ta population est de',Population);
+
 
     }
 }
@@ -127,6 +144,11 @@ function DepotPrincipal(){
 
             rdp.innerHTML = DEPOT_PRINCIPAL;
             multiplyDepot++;
+            DEPOT_VALEUR = DEPOT_VALEUR +(DEPOT_VALEUR*(25/100));
+            console.log(DEPOT_VALEUR);
+            Population = Population+4;
+            console.log('Ta population est de',Population);
+
         }
 }
 
@@ -135,13 +157,18 @@ function SiloPrincipal(){
             SILO_PRINCIPAL++;
             SILO_LEVEL++;
 
-            BOIS = BOIS - (100 * multiplySilo);
-            ARGILE = ARGILE-(100 * multiplySilo);
-            FER = FER-(100 * multiplySilo);
-            CÉREALE = CÉREALE-(100 * multiplySilo);
+            BOIS = BOIS - (100 * multiply);
+            ARGILE = ARGILE-(100 * multiply);
+            FER = FER-(100 * multiply);
+            CÉREALE = CÉREALE-(100 * multiply);
 
-            rsl.innerHTML = SILO_PRINCIPAL;
+            rdp.innerHTML = SILO_PRINCIPAL;
             multiplySilo++;
+            SILO_VALEUR = SILO_VALEUR +(SILO_VALEUR*(25/100));
+            console.log(SILO_VALEUR);
+            Population = Population+3;
+            console.log('Ta population est de',Population);
+
         }
 }
 
