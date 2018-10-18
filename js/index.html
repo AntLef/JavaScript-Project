@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TD</title>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="css.css">
+</head>
+<body>
+    <p> <a href="index.html"> Retour a l'accueil </a> </p>
+
+<h1>Ressources</h1>
+<div class="Alligne">
+    <p class="Ressources"> Bois: </p>
+        <p id="bois"> 0 </p>
+    <p class="Ressources"> Argile: </p>
+        <p id="argile"> 0 </p>
+    <p class="Ressources"> Fer: </p>
+        <p id="fer"> 0 </p>
+    <p class="Ressources"> Céreales: </p>
+        <p id="céreale"> 0 </p>
+</div>
+<p> <h1> Batiments </h1> </p>
+
+<div>
+    <button onclick="return BatimentPrincipal()" id="bp"> Batiment Principal </button> <p> Niveaux <p id="BP"> 1 </p> </p>
+
+    <button onclick="return DepotPrincipal()" id="dpt"> Depot </button> <p> Niveaux <p id="DEPOT"> 0 </p> </p> 
+
+    <button onclick="return SiloPrincipal()" id="sl"> Silo </button> <p> Niveaux <p id="SILO"> 0 </p> </p>
+
+
+</div>
+
+    <h1>Militaire</h1>
+
+<div>
+ 
+    <button onclick="return CaserneUp()" id="rc"> Améliorer la Caserne </button> <p> Niveaux <p id="CASERNE"> 0 </p> </p>
+
+    <button onclick="return EcurieUp()" id="re"> Améliorer l'Ecurie </button> <p> Niveaux <p id="ECURIE"> 0 </p> </p>
+
+
+    <button onclick="return AtelierUp()" id="ra"> Améliorer l'Atelier </button> <p> Niveaux <p class="Interval" id="ATELIER"> 0 </p> </p>
+
+
+    <button onclick="return ForgeUp()" id="rf"> Améliorer la Forge </button> <p> Niveaux <p class="Interval" id="FORGE"> 0 </p> </p>
+</div>
+
+
+<script src="jeux.js"></script>
+
+
+</body>
+</html>
