@@ -1,0 +1,25 @@
+.Alligne{
+	display: inline-flex;
+}
+
+.Ressources{
+	margin-right: 10px;
+	margin-left: 10px;
+	font-size: 16px;
+
+}
+
+.bordure{
+	border: 1px solid;
+	padding: 10px;
+	margin: 5px;
+}
+
+body{
+	background-color: #7970af;
+}
+
+a{
+	font-size: 20px;
+	text-decoration: none;
+}
