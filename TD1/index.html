@@ -1,17 +1,42 @@
 <DOCTYPE html>
-<html>
-<head>
-        <title>TD1 - Le nombre à Trouver</title>
-        <meta charset="UTF-8"/>
-</head>
+        <html>
+        <head>
+                <title>TD1 - Le nombre à Trouver</title>
+                <meta charset="UTF-8"/>
+        </head>
+        
+        <body>
+                <h1>Le nombre à trouver</h1>
+        <p>
+                <a href="#" onclick="javascript:PoM_partie(1,2)">Niveau Normal</a><br />
+        </p>
+        
+        <br><br>
+        <input type="button" value="Reload Page" onClick="document.location.reload(true)">
+        <br><br>
+        
+        <form method="post" action="">
+                        <input type="text" name="cpt" id="cpt" />
+                        <input type="text" name="score" id="score" />
+                    
+                        <input type="button" onclick="ajouterLigne()" value="Enregistrer" />
+                    </form>
+                    
+                    <table id="tableau" border="1">
+                        <thead>
+                            <tr>
+                                <th>Pseudo 
+                                        <th><span id="scores"></span></th>
+                                </th>
+                                        
+                                <th>Coordonnées bancaires</th>
+                            </tr>
 
-<body>
-        <h1>Le nombre à trouver</h1>
-<p>
-        <a href="#" onclick="javascript:PoM_partie(1,100)">Niveau Normal</a><br />
-</p>
-
-<script src="js.js"></script>
-
-</body>
-</html>
+                        </thead>
+                        
+                        </tbody>
+                    </table>
+        
+        <script src="js.js"></script>        
+        </body>
+        </html>

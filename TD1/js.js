@@ -31,13 +31,14 @@ function PoM_manche(min, max)
 		 return cpt;
 }
 
-
-function PoM_partie(min, max)
-{
 		 var cpt = 0; // nb de manches jouees
 		 var best_score = 0; // meilleur score
 		 var score; // score de la partie en cours
 		 var continuer;
+		 
+function PoM_partie(min, max)
+{
+
 
 		 do
 		 {
@@ -45,20 +46,15 @@ function PoM_partie(min, max)
 					if(score)
 					{
 							 cpt++;
-							 if(score < best_score || best_score == 0)
+							 if(score < best_score || best_score == 0){
 										best_score = score;
 										var tableau = [cpt, best_score, score];
-										 console.log(tableau);
-
-											function lire1(tableau)
-												{
-														var chaine = "Le tableau contient :"
-														for(var i=0; i<tableau.length; i++)
-																chaine += "\n" + i + " -> " + tableau[i];
-														return chaine;
-												}
+											console.log(tableau);
+										}
 												
 							 continuer = confirm("Bravo, tu as gagne en " + score + " coups.\nVeux-tu rejouer ?");
+							 document.getElementById("scores").innerHTML=score;
+
 					}
 					else
 							 continuer = false;
@@ -66,7 +62,26 @@ function PoM_partie(min, max)
 		 while(continuer);
 
 		 alert("Tu as joue " + cpt + " manche(s).\nTon meilleur score est de " + best_score + " coups.");
-		 alert(tableau);
 
 		 return best_score;
 }
+
+
+function ajouterLigne()
+{
+	var tableau = document.getElementById("tableau");
+
+	var ligne = tableau.insertRow(-1);//on a ajouté une ligne
+
+	var colonne1 = ligne.insertCell(0);//on a une ajouté une cellule
+	colonne1.innerHTML += document.getElementById("scores").value;//on y met le contenu de titre
+	document.getElementById("scores").colonne1.innerHTML=score;
+
+
+	var colonne2 = ligne.insertCell(1);//on ajoute la seconde cellule
+    colonne2.innerHTML += document.getElementById("score").value;
+    
+    var colonne3 = ligne.insertCell(1);//on ajoute la seconde cellule
+	colonne3.innerHTML += document.getElementById("best_score").value;
+
+}	
