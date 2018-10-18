@@ -9,7 +9,6 @@ function nb_aleatoire(min, max)
 		 return Math.floor(nb);
 }
 		
-
 function PoM_manche(min, max)
 {
 		 var nb = nb_aleatoire(min, max); // nb a deviner
@@ -49,7 +48,6 @@ function PoM_partie(min, max)
 										best_score = score;
 										var tableau = [cpt, best_score, score];
 										console.log(tableau);
-											
 										}
 							
 
@@ -63,24 +61,23 @@ function PoM_partie(min, max)
 		 }
 		 while(continuer);
 		 alert("Tu as joue " + cpt + " manche(s).\nTon meilleur score est de " + best_score + " coups.");
-
-
-
+      
 }
 
+
 function ajouterLigne()
-	{
-		var tabl = document.getElementById("tabl");
+{
+	var tabl = document.getElementById("tabl");
 
-			var ligne = tabl.insertRow(-1); //on a ajouté une ligne
+		var ligne = tabl.insertRow(-1); //on a ajouté une ligne
 
-				var colonne1 = ligne.insertCell(0); //on a une ajouté une cellule
-				colonne1.innerHTML += document.getElementById("cpt").innerHTML=cpt; //on y met le contenu de titre
+			var colonne1 = ligne.insertCell(0); //on a une ajouté une cellule
+			colonne1.innerHTML += document.getElementById("cpt").innerHTML=cpt;
+			
+			var colonne2 = ligne.insertCell(1); //on ajoute la seconde cellule
+			colonne2.innerHTML += document.getElementById("best_score").innerHTML=best_score;
 				
-				var colonne2 = ligne.insertCell(1); //on ajoute la seconde cellule
-				colonne2.innerHTML += document.getElementById("best_score").innerHTML=best_score;
+			var colonne3 = ligne.insertCell(2); //on ajoute la troisieme cellule
+			colonne3.innerHTML += document.getElementById("score").innerHTML=score;
 				
-				var colonne3 = ligne.insertCell(2); //on ajoute la seconde cellule
-				colonne3.innerHTML += document.getElementById("score").innerHTML=score;
-				
-	}
+}
