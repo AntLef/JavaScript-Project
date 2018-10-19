@@ -1,4 +1,5 @@
 
+//Début déclaration des variables
 var rbois = document.getElementById('bois');
 var rargile = document.getElementById('argile');
 var rfer = document.getElementById('fer');
@@ -36,11 +37,6 @@ var rtroupetireur = document.getElementById('rtir');
 var rttir = document.getElementById('TIREUR');
 
 
-
-//var BOIS = 750;
-//var ARGILE = 750;
-//var FER = 750;
-//var CÉREALE = 750;
 
 var ressources = {
     argile: 750,
@@ -100,18 +96,21 @@ var TROUPE_NB_TIREUR = 0;
 var TROUPE_TIREUR = 0;
 var TROUPE_NB_TIREUR = 0;
 
+// Fin déclaration des variables
 
-
+// Déclaration du Pseudo + départ du jeu
 function testes(){
     pseudo = document.getElementById("pseudo").value;  
 
     document.getElementById("pseudos").innerHTML=pseudo;
     console.log('pseudo ' + pseudo);
     bois();
-	argile();
-	fer();
-	céreale();
+    argile();
+    fer();
+    céreale();
 }
+
+//Ajout des ressources
 
 function bois() {
     if (timerBois && (ressources.bois >= DEPOT_VALEUR)) {
@@ -119,13 +118,13 @@ function bois() {
         timerBois = setTimeout(function(){
         rbois.innerHTML = ressources.bois;
     bois();
-},0);
+},0); //Si la valeur ressources.bois est égale a DEPOT_VALEUR le compteur se stop
     }
 timerBois = setTimeout(function(){
     ressources.bois++;
         rbois.innerHTML = ressources.bois;
     bois();
-},1);
+},1);//Temps de récuperation de ressources
 }
 
 
@@ -174,10 +173,12 @@ timerCéreale = setTimeout(function(){
 },1);
 }
 
+//Création des batiments
 
 function BatimentPrincipal(){
 
-    if(ressources.bois >= (200 * multiply) && ressources.argile >= (150 * multiply) && ressources.fer >= (110 * multiply) && ressources.céréale >= (90 * multiply) && (BATIMENT_PRINCIPAL == BATIMENT_LEVEL)){ 
+    if(ressources.bois >= (200 * multiply) && ressources.argile >= (150 * multiply) && ressources.fer >= (110 * multiply) && ressources.céréale >= (90 * multiply) && (BATIMENT_PRINCIPAL == BATIMENT_LEVEL)){
+        // Condition pour améliorer le batiment plus augmentation du prix pour le prochain niveau 
         //console.log("ca marche")
         BATIMENT_PRINCIPAL++;
         BATIMENT_LEVEL++;
@@ -226,6 +227,7 @@ function SiloPrincipal(){
             SILO_PRINCIPAL++;
             SILO_LEVEL++;
 
+            //Ces lignes définissent l'augmentation du prix
             ressources.bois = ressources.bois - (100 * multiplySilo);
             ressources.argile = ressources.argile-(170 * multiplySilo);
             ressources.fer = ressources.fer-(130 * multiplySilo);
@@ -243,7 +245,7 @@ function SiloPrincipal(){
         }
     }
 
-
+//Création des batiments militaire
 
 function CaserneUp(){
         if(ressources.bois >= (80 * multiplyCaserne) && ressources.argile >= (60 * multiplyCaserne) && ressources.fer >= (170 * multiplyCaserne) && ressources.céréale >= (100 * multiplyCaserne) && (CASERNE_PRINCIPAL == CASERNE_LEVEL)){ 
@@ -323,6 +325,7 @@ function ForgeUp(){
         }
     }
 
+//Création des Troupes
 
 function TroupeDef(){
         if(ressources.bois >= 100 && ressources.argile >= 100 && ressources.fer >= 100 && ressources.céréale >= 100 ){ 

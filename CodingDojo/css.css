@@ -1,0 +1,136 @@
+.Alligne{
+	display: inline-flex;
+}
+
+.Ressources{
+	margin-right: 10px;
+	margin-left: 10px;
+	font-size: 16px;
+
+}
+
+.bordure{
+	border: 2px solid #fff;
+	padding: 10px;
+	margin: 5px;
+	border-radius: 20px;
+	background-color: #ba967b;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+
+.bordure2{
+	border: 2px solid #fff;
+	padding: 10px;
+	border-radius: 13px;
+	background-color: #ba967b;
+	
+}
+
+body {
+    background-color: #e8ad7f;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: small;
+	margin-top: 50px;
+	margin-bottom: 200px;
+	margin-left: 400px;
+	margin-right: 400px;
+	text-align: center;
+	color: #36271b;
+}
+
+a{
+
+	text-decoration: none;
+	color: #36271b;
+}
+
+button {
+	border-style: none;
+	color: white;
+	background: none;
+	font-size: 15px;
+	margin: 5px;
+}
+
+button:hover{
+	background: #87674e;
+	transition: 0.5s;
+	border: white solid 1px;
+	border-radius: 5px;
+	margin: 8px;
+}
+
+.btn2 {
+	width: 150px;
+	height: 40px;
+	padding: 5px;
+	margin: 10px;
+	border: 1px solid #f4e5d9;
+	background-color: #87674e;
+	color: #f4e5d9;
+	border-radius: 5px;
+}
+
+.btn2:hover {
+	width: 150px;
+	height: 40px;
+	padding: 5px;
+	margin: 10px;
+	border: 1px solid #f4e5d9;
+	background-color: #c0926e;
+	color: #f4e5d9;
+	border-radius: 5px;
+	transition: 0.5s;
+}
+
+.btn3 {
+	width: 120px;
+	height: 30px;
+	padding: 5px;
+	border: 1px solid #f4e5d9;
+	background-color: #87674e;
+	color: #f4e5d9;
+	border-radius: 5px;
+}
+
+.btn3:hover {
+	width: 120px;
+	height: 30px;
+	padding: 5px;
+	border: 1px solid #f4e5d9;
+	background-color: #c0926e;
+	color: #f4e5d9;
+	border-radius: 5px;
+	transition: 0.5s;
+}
+
+#pseudo {
+	width: 150px;
+	height: 20px;
+	padding: 5px;
+	border: 1px solid #987357;
+	border-radius: 5px;
+}
+
+.BP {
+	display: inline;
+
+}
+
+header {
+	border: white solid 12px;
+	border-radius: 22px;
+	background-color: #967459;
+	padding: 20px;
+	color: #36271b;
+}
+
+footer {
+	border: white solid 12px;
+	border-radius: 20px;
+	background-color: #967459;
+	padding: 20px;
+	margin-top: 50px;
+	color: #36271b;
+}

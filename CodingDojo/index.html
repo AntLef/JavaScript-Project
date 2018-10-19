@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Coding Dojo Travian</title>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="css.css">
+</head>
+<body>
+
+<header style="margin-bottom:50px">
+    <div class="titre">
+        <h1 style="font-size: 30px">Coding Dojo Travian</h1>
+        <img src="https://lh3.googleusercontent.com/9GruVFtIICSmJ6AYfYtWqfT7HW40iRuyBv9Tz5l6TCsYKBFX4DnqmMUvya2nP50OFw=s360" style="height: 300px">
+            <p> 
+                Bienvenue commandant voici votre nouveau village. Nous avons besoin de nous développer pour agrandir le village. Pour pouvoir agrandir votre village vous allez devoir agrandir la taille de vos bâtiments afin de stocker plus de ressources et agrandir votre armée.
+                <br><br><i>Aide</i><br>
+                Plus vous augmenterez la taille d'un bâtiment, plus il vous faudra de ressources. En augmentant la taille de vos réserves, vous pourrez y stocker plus de ressources. En revanche, vos troupes coûteront toujours le même prix.<br>
+                <strong>
+                    <br>
+                    Entre ton pseudo pour commencer la partie. 
+                    <br><br>Bon jeu sur Coding Dojo Travian !
+                </strong>
+            </p>
+            </div>
+            
+            
+</header>
+
+<div>
+    <label>Pseudo :</label>
+    <input type="text" id="pseudo">
+    <input type="submit"  class="btn3" onclick ="testes()">
+</div> 
+
+<div style="margin:20px">
+    <label>Votre Pseudo :</label>
+    <span id="pseudos"></span>   
+</div>
+
+<h2>Ressources</h2>
+
+<div class="Alligne">
+    <p class="Ressources">Bois :</p>
+        <p id="bois"> 0 </p>
+    <p class="Ressources">Argile :</p>
+        <p id="argile">0</p>
+    <p class="Ressources">Fer :</p>
+        <p id="fer">0</p>
+    <p class="Ressources">Céreales :</p>
+        <p id="céreale">0</p>
+</div>
+
+<div>Population : <p id="population" style="display: inline;">2</p></div>
+
+<h2>Batiments</h2>
+
+<div>
+            <button onclick="return BatimentPrincipal()" id="bp"> Batiment Principal </button> <p>Niveaux : <p id="BP">1</p> </p>
+
+
+    <button onclick="return DepotPrincipal()" id="dpt"> Depot </button> <p> Niveaux :<p id="DEPOT">0</p> </p> 
+
+    
+    <button onclick="return SiloPrincipal()" id="sl"> Silo </button> <p> Niveaux :<p id="SILO">0</p> </p>
+
+</div>
+
+    <h2>Militaire</h2>
+
+<div>
+    <section class="bordure">
+        <button onclick="return CaserneUp()" id="rc"> Améliorer la Caserne </button> <p> Niveaux <p id="CASERNE"> 0 </p> </p>
+        <div class="bordure2">
+            <button onclick="return TroupeDef()" id="rtd"> Former des Troupes défensives </button> <p> Nombre <p class="Interval" id="DEF"> 0 </p> </p>
+            <button onclick="return TroupeOff()" id="rtof"> Former des Troupes offensives </button> <p> Nombre <p class="Interval" id="OFF"> 0 </p></p>
+            <button onclick="return TroupeTireur()" id="rtir"> Former des Troupes tireurs </button> <p> Nombre <p class="Interval" id="TIREUR"> 0 </p></p>
+        </div>
+    </section>
+
+    <section class="bordure">
+        <button onclick="return EcurieUp()" id="re"> Améliorer l'Ecurie </button> <p> Niveaux <p id="ECURIE"> 0 </p> </p>
+    </section>
+
+    <section class="bordure">
+        <button onclick="return AtelierUp()" id="ra"> Améliorer l'Atelier </button> <p> Niveaux <p class="Interval" id="ATELIER"> 0 </p> </p>
+    </section>
+
+    <section class="bordure">
+        <button onclick="return ForgeUp()" id="rf"> Améliorer la Forge </button> <p> Niveaux <p class="Interval" id="FORGE"> 0 </p> </p>
+    </section>
+
+    <input type="button" class="btn2" value="Nouvelle Partie" onClick="document.location.reload(true)">
+</div>
+
+<footer>
+    <div>
+    <p style="margin: 50px">
+            © Jeu réalisé par Lowik, Alexandre, Antoine, Quentin ©    
+            <br><br>GitHub : <a href="https://github.com/">https://github.com/</a>
+    </p>
+</footer>
+
+<script src="jeux.js"></script>
+
+
+</body>
+</html>
