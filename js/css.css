@@ -9,9 +9,29 @@
 
 }
 
+.bordure{
+	border: 1px solid;
+	padding: 10px;
+	margin: 5px;
+}
 
+.bordure2{
+	border: 1px solid;
+	padding: 10px;
+}
+
+body{
+	background-color: #7970af;
+}
 
 a{
 	font-size: 20px;
 	text-decoration: none;
+}
+
+button {
+	border-style: none;
+	color: white;
+	background: none;
+	font-size: 15px;
 }

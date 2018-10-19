@@ -6,7 +6,6 @@
     <link rel="stylesheet" type="text/css" href="css.css">
 </head>
 <body>
-    <p> <a href="index.html"> Retour a l'accueil </a> </p>
 
 <h1>Ressources</h1>
 <div class="Alligne">
@@ -34,16 +33,32 @@
     <h1>Militaire</h1>
 
 <div>
- 
-    <button onclick="return CaserneUp()" id="rc"> Améliorer la Caserne </button> <p> Niveaux <p id="CASERNE"> 0 </p> </p>
+   
+ <section class="bordure">
+     <button onclick="return CaserneUp()" id="rc"> Améliorer la Caserne </button> <p> Niveaux <p id="CASERNE"> 0 </p> </p>
+     <div class="bordure2">
+        <button onclick="return TroupeDef()" id="rtd"> Former des Troupes défensives </button> <p> Nombre <p class="Interval" id="DEF"> 0 </p> </p>
+        <button onclick="return TroupeOff()" id="rtof"> Former des Troupes offensives </button> <p> Nombre <p class="Interval" id="OFF"> 0 </p> </p>
+        <button onclick="return TroupeTireur()" id="rtir"> Former des Tireurs </button> <p> Nombre <p class="Interval" id="TIREUR"> 0 </p> </p>
+    </div>
+</section>
 
+ <section class="bordure">
     <button onclick="return EcurieUp()" id="re"> Améliorer l'Ecurie </button> <p> Niveaux <p id="ECURIE"> 0 </p> </p>
+    <div class="bordure2">
+        <button onclick="return CavalerieSpy()" id="rpsy"> Former des Espions </button> <p> Nombre <p class="Interval" id="SPY"> 0 </p> </p>
+        <button onclick="return CavalerieDef()" id="rdef"> Former des Défenseurs </button> <p> Nombre <p class="Interval" id="CDEF"> 0 </p> </p>
+    </div>
+</section>
 
-
+ <section class="bordure">
     <button onclick="return AtelierUp()" id="ra"> Améliorer l'Atelier </button> <p> Niveaux <p class="Interval" id="ATELIER"> 0 </p> </p>
+</section>
 
-
+ <section class="bordure">
     <button onclick="return ForgeUp()" id="rf"> Améliorer la Forge </button> <p> Niveaux <p class="Interval" id="FORGE"> 0 </p> </p>
+</section>
+
 </div>
 
 
